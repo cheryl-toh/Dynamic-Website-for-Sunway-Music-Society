@@ -1,0 +1,95 @@
+.eventbooking__class {
+    padding-left: 1rem;
+}
+
+.eventbooking {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    padding: 1.5rem;
+    gap: 0.2rem;
+    height: 90%;
+    background: var(--color-bg);
+    border-radius: 0.5rem;
+    width: 120%;
+}
+
+
+
+.eventbooking__right {
+    display: grid;
+    align-content: center;
+    text-align: center;
+    width: fit-content;
+    margin-left: 30%;
+    
+}
+
+.eventbooking__container {
+    display: grid;
+    gap: 0rem;
+    transition: all 300ms ease;
+}
+
+.eventbooking h4 {
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.eventbooking__class h2 {
+    margin-bottom: 1rem;
+    padding-left: 0%;
+    background: linear-gradient(to right,var(--color-danger), var(--color-primary));
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.eventbooking ul {
+    margin-top: 0rem;
+    font-size: 90%;
+}
+
+.btn {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    margin-left: 0.2rem;
+    font-size: 1rem;
+    border-radius: 0.2rem;
+}
+
+/*tablet*/
+
+@media screen and (max-width: 1024px){
+
+    .eventbooking__class {
+        width: 80%;
+    }
+
+    
+}
+
+
+
+/* mobile */
+
+@media screen and (max-width: 600px) {
+.eventbooking {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .eventbooking__right {
+        text-align: left;
+        float: left;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .btn {
+        margin-left: 0%;
+    }
+   
+}

@@ -1,0 +1,151 @@
+
+nav {
+    box-shadow: inset 0 0 3rem rgba(0,0,0,0.5);
+}
+
+.message {
+    position: sticky;
+    top: 0;
+    padding-left: 1rem;
+    width: 100%;
+    background-color: var(--color-primary);
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10000;
+}
+
+.message span{
+    color: var(--color-bg);
+}
+
+.login__container {
+    background: transparent;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 5rem;
+    height: auto;
+    margin: 7rem auto;
+}
+
+.login__left {
+    grid-template-columns: 1fr;
+    text-align: left;
+    gap: 2rem;
+    padding-left: 10%;
+
+}
+
+.login__left h1 {
+    color: var(--color-danger);
+    margin-top: 30%;
+}
+
+.login__left p {
+    color: grey;
+}
+
+.login__input{
+    margin-top: 1rem;
+}
+
+.login__input p {
+    color: var(--color-white);
+    margin-top: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-right: 4rem;
+}
+
+.form__name {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 0;
+   
+}
+
+.form__name p {
+    color: var(--color-white);
+}
+
+.form__imail p {
+    color: var(--color-white);
+}
+
+.form__password p {
+    color: var(--color-white);
+}
+
+.form__password {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form__imail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+form input[type= "text"]{
+    width: 100%;
+}
+
+input, textarea {
+    width: 100%;
+    height: 2.5rem;
+    padding: 1rem;
+    background: transparent;
+    border: 1px solid;
+    border-color: grey;
+    border-radius: 0.5rem;
+    color: var(--color-white);
+    transition: var(--transition);
+    font-family: 'Josefin Sans', sans-serif;
+    line-height: 1.7;
+}
+
+form input:hover{
+    border-color: var(--color-white);
+}
+
+.btn {
+    width: 100%;
+    height: 2.5rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    padding-top: 2%;
+    margin-top: 1rem;
+    font-family: 'Josefin Sans', sans-serif;
+    line-height: 1.7;
+}
+
+form a:hover {
+    text-decoration: underline;
+}
+
+/*tablet*/
+
+@media screen and (max-width: 1024px){
+    img {
+        display: none;
+    }
+
+    .login__container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* mobile */
+
+@media screen and (max-width: 600px) {
+}
+

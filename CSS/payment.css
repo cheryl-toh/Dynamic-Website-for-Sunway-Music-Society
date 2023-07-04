@@ -1,0 +1,233 @@
+body {
+    background-color: var(--color-bg);
+}
+
+header {
+    height: 5rem;
+}
+
+img {
+    width: 10%;
+    margin-left: 5%;
+}
+
+.payment__container {
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 1rem;
+    height: auto;
+    margin:  auto;
+    border-radius: 1rem;
+}
+
+.payment__left {
+    text-align: left;
+    margin-left: 5%;
+}
+
+.payment__left h2 {
+    text-align: left; 
+    margin-left: 15rem;
+    margin-bottom: 1rem;
+}
+
+.payment__left p {
+   margin-left: 15rem;
+}
+
+.payment__left h1 {
+    margin-left: 15rem;
+}
+
+.payment__right {
+    grid-template-columns: 1fr;
+    text-align: left;
+    gap: 2rem;
+    width: auto;
+    padding-left: 10%;
+    padding-top: 2.5rem;
+}
+
+.payment__right input {
+    width: 50%;
+    height: 2.5rem;
+    padding: 1rem;
+    background: transparent;
+    border: 1px solid;
+    border-color: grey;
+    border-radius: 0.5rem;
+    color: var(--color-white);
+    transition: var(--transition);
+    font-family: 'Josefin Sans', sans-serif;
+    line-height: 1.7;
+}
+
+.joined {
+    display: flex;
+    margin-top: 1rem;
+    width: 50%;
+}
+
+.payment__right h4 {
+    margin-top: 1rem;
+    font-size: medium;
+}
+
+.country__scroll {
+    scrollbar-color: dark;
+}
+
+select {
+    width: 50%;
+    height: auto;
+    padding: 1rem;
+    background: transparent;
+    border: 1px solid;
+    border-color: grey;
+    border-radius: 0.5rem;
+    color: var(--color-white);
+    transition: var(--transition);
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+option {
+    background: var(--color-bg4);
+}
+
+.tng img {
+    width: 25%;
+    margin-left: 0;
+}
+
+.btn {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    margin-left: 0.2rem;
+    margin-top: 1rem;
+    border-radius: 0.2rem;
+    width: 50%;
+}
+
+.btn-method {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    margin-left: 0.2rem;
+    border-radius: 0.2rem;
+    color: var(--color-white);
+    margin-top: 0.5rem;
+    background-image: linear-gradient(to right,var(--color-bg3), var(--color-bg4));
+    width: 15%;
+    gap: 1rem;
+}
+
+.bank {
+    display: none;
+}
+
+.card {
+    display: initial;
+}
+
+.tng {
+    display: none;
+}
+
+
+
+/*tablet*/
+
+@media screen and (max-width: 1024px){
+
+    .payment__container {
+        margin-left: 5%;
+        width: fit-content;
+        grid-template-columns: 1fr;
+    }
+   
+    .payment__left {
+        margin: 0;
+    }
+
+
+
+    input, textarea {
+        width: 100%;
+        height: 2.5rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        background: transparent;
+        border: 1px solid;
+        border-color: grey;
+        border-radius: 0.5rem;
+        color: var(--color-white);
+        transition: var(--transition);
+        font-family: 'Josefin Sans', sans-serif;
+        line-height: 1.7;
+    }
+
+    .payment__left h2 {
+        text-align: left; 
+        margin-left: 2rem;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .payment__left p {
+       margin-left: 2rem;
+    }
+    
+    .payment__left h1 {
+        margin-left: 2rem;
+    }
+
+
+    .payment__right input {
+        width: 100%;
+        height: 2.5rem;
+        padding: 1rem;
+        background: transparent;
+        border: 1px solid;
+        border-color: grey;
+        border-radius: 0.5rem;
+        color: var(--color-white);
+        transition: var(--transition);
+        font-family: 'Josefin Sans', sans-serif;
+        line-height: 1.7;
+    }
+
+    .joined {
+        display: flex;
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    select {
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .btn-method {
+        width: 30%;
+
+    }
+    
+}
+
+
+
+/* mobile */
+
+@media screen and (max-width: 600px) {
+   
+    .content {
+        margin: 5rem;
+    }
+}

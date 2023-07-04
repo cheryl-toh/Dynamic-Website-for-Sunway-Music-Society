@@ -1,0 +1,136 @@
+body {
+    background: var(--color-bg);
+}
+
+.content {
+    margin: 1rem;
+    margin-left: 260px;
+}
+
+.profile__container {
+    padding-left: 1rem;
+    margin-top: 5rem;
+    width: 190%;
+}
+
+.profile__container h2 {
+    margin-bottom: 1rem;
+    padding-left: 0%;
+    background: linear-gradient(to right,var(--color-danger), var(--color-primary));
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.profile__content {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 2rem;
+    height: auto;
+    margin: 2rem auto;
+}
+
+.profile__left {
+    text-align: center;
+}
+
+.profile__left img{
+   width: 10rem;
+   border-radius: 50%;
+   display: block;
+   margin: auto;
+}
+
+.profile__right {
+    grid-template-columns: 1fr;
+    text-align: left;
+    gap: 2rem;
+
+}
+
+h4 {
+    font-size: 90%;
+}
+
+input:disabled {
+    cursor: not-allowed;
+    color: var(--color-bg6);
+}
+
+input, textarea {
+    width: 100%;
+    height: 2.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: transparent;
+    border: 1px solid;
+    border-color: grey;
+    border-radius: 0.5rem;
+    color: var(--color-white);
+    transition: var(--transition);
+    font-family: 'Josefin Sans', sans-serif;
+    line-height: 1.7;
+}
+
+.btn {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    margin-left: 0.2rem;
+    border-radius: 0.2rem;
+}
+
+/*tablet*/
+
+@media screen and (max-width: 1024px){
+
+    .profile__container {
+        margin-left: 5%;
+        width: fit-content;
+        display: grid;
+    }
+    .profile__content {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: fit-content;
+    }
+
+    input, textarea {
+        width: 100%;
+        height: 2.5rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        background: transparent;
+        border: 1px solid;
+        border-color: grey;
+        border-radius: 0.5rem;
+        color: var(--color-white);
+        transition: var(--transition);
+        font-family: 'Josefin Sans', sans-serif;
+        line-height: 1.7;
+    }
+    
+}
+
+
+
+/* mobile */
+
+@media screen and (max-width: 600px) {
+   
+    body {
+        background: var(--color-bg3);
+    }
+    .content {
+        margin: 5rem;
+    }
+
+    .profile__container {
+        margin: 0;
+        align-items: center;
+        text-align: center;
+    }
+}
+

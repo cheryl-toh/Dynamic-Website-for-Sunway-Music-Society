@@ -1,0 +1,226 @@
+<?php
+
+include_once '../dbh.inc.php';
+
+session_start();
+
+$member_id = $_SESSION['member_id'];
+
+
+if(!isset($member_id)){
+  header('location:login.php');
+}
+
+$select_member = mysqli_query($conn, "SELECT * FROM `members` WHERE `Student ID` = '$member_id'") or die('query failed');
+$member = mysqli_fetch_assoc($select_member);
+
+
+if(isset($_POST['update'])){
+
+    $dob = $_POST['dob'];
+    $phone = $_POST['phonenumber'];
+  
+    mysqli_query($conn, "UPDATE `members` SET `dob` = '$dob', `Phone Number` = '$phone' WHERE `Student ID` = '$member_id'") or die('query failed');
+    header('location: myprofile.php');
+  }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile</title>
+
+    <link rel="icon" href="/Images/smalllogo.png" type="image/x-icon" />
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+
+    <link rel="stylesheet" href="../../CSS/portalstyle.css" />
+    <link rel="stylesheet" href="../../CSS/myprofile.css" />
+  </head>
+
+  <body>
+  <div class="container topnav__container">
+      <ul class="topnav__menu">
+        <li>
+          <div class="profile_content">
+            <img src="../../Images/profile.jpg" class="profileimg" width="30" />
+            <a href="#" class="username"><?php echo $member['First Name']; ?><?php echo $member['Last Name']; ?></a>
+          </div>
+
+          <ul class="submenu">
+            <li>
+              <a href="myprofile.php"
+                ><i class="uil uil-user-circle"></i>My Profile</a
+              >
+            </li>
+            <li>
+              <a href="../login.php"><i class="uil uil-signout"></i>Log Out</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    
+
+    <!--END OF TOP NAV BAR-->
+
+    <nav>
+      <div class="container sidenav__container">
+        <a href="dashboard.php"
+          ><img src="../../Images/logo.png" class = "navimage" alt="SMS"
+        /></a>
+        <ul class="sidenav__menu">
+          <h5 class = "navh5">Dashboard</h5>
+          <li>
+            <a href="dashboard.php"><i class="uil uil-estate"></i>Dashboard</a>
+          </li>
+          <hr>
+          <h5 class = "navh5">Membership</h5>
+          <li>
+            <a href="membership.php"
+              ><i class="uil uil-user-square"></i>My Membership</a
+            >
+          </li>
+          <hr>
+          <h5 class = "navh5">Bookings</h5>
+          <li>
+            <a href="eventbooking.php"
+              ><i class="uil uil-music"></i>Event Booking</a
+            >
+          </li>
+          <li>
+            <a href="mybookings.php"
+              ><i class="uil uil-shopping-cart"></i>My Bookings</a
+            >
+          </li>
+        </ul>
+        
+        
+        <div class="nav__socials">
+          <hr>
+          <h5 class = "navh5">Follow Us</h5>
+
+          <div class="links">
+            <li>
+            <a
+              href="https://www.instagram.com/sunwaymusicsociety/"
+              target="_blank"
+              ><i class="uil uil-instagram"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://www.facebook.com/sunwaymusicsociety"
+              target="_blank"
+              ><i class="uil uil-facebook"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/channel/UCRjgtQFxKOy8lXGl0SiKj1g"
+              target="_blank"
+              ><i class="uil uil-youtube"></i
+            ></a>
+          </li>
+          </div>
+          
+        </div>
+
+        <div class="nav__discord">
+          <li>
+            <a href="https://discord.gg/xreWTUQk" target="_blank"
+              ><img src="../../Images/discord.svg" width="100"
+            /></a>
+          </li>
+        </div>
+
+        <button id="Open-menu-btn"><i class="uil uil-bars"></i></button>
+        <button id="Close-menu-btn"><i class="uil uil-times"></i></button>
+      </div>
+    </nav>
+    <!--END OF SIDE NAV BAR-->
+
+    <div class="content">
+        <div class="container profile__container">
+            <h2>MY PROFILE</h2>
+            <div class="profile__content">
+                
+                <div class="profile__left">
+                    <img src="../../Images/profile.jpg" />
+                    <button class="btn btn-primary">Upload Picture</button>
+                </div>
+
+                <div class="profile__right">
+                    <form action="" method = "POST" enctype = "multipart/form-data">
+                        <div class="profile__name">
+                            <h4>First Name</h4>
+                            <input
+                                type="text"
+                                placeholder="First Name"
+                                name="First Name"
+                                value="<?php echo $member['First Name']; ?>"
+                                disabled
+                            />
+
+                            <h4>Last Name</h4>
+                            <input
+                                type="text"
+                                placeholder="last Name"
+                                name="last name"
+                                value="<?php echo $member['Last Name']; ?>"
+                                disabled
+                            />
+                        </div>
+
+                        <h4>Imail Address</h4>
+                        <input
+                        type="email"
+                        placeholder="email"
+                        value="<?php echo $member['Imail']; ?>"
+                        disabled
+                        />
+
+                        <h4>Membership Status</h4>
+                        <input
+                        type="text"
+                        placeholder="status"
+                        value="<?php echo $member['Status']; ?> Member"
+                        disabled
+                        />
+
+                        <h4>Date of Birth</h4>
+                        <input
+                        type="date"
+                        name="dob"
+                        placeholder="Date of Birth"
+                        value="<?php echo $member['dob']; ?>"
+                        />
+
+                        <h4>Phone Number</h4>
+                        <input type="text" name="phonenumber" value="<?php echo $member['Phone Number']; ?>" placeholder="+60100000000" />
+
+                        <button type="submit" name = "update" class="btn btn-primary">Update Profile</button>
+                    </form>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--END OF CONTENT-->
+    <script src="../../JS/portalmain.js"></script>
+
+  </body>
+</html>
